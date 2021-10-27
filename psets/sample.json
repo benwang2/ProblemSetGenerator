@@ -1,0 +1,44 @@
+[
+    "true",
+    "Basic addition and subtraction",
+    {
+        "problem":"What is __x__+__y__?",
+        "variables":[
+            ["x",1,9],
+            ["y",1,9]
+        ],
+        "solution":"x+y"
+    },
+    {
+        "problem":"What is __x__+__y__?",
+        "variables":[
+            ["x",10,30],
+            ["y",1,9]
+        ],
+        "solution":"x+y"
+    },
+    {
+        "problem":"What is __x__+__y__?",
+        "variables":[
+            ["x",10,30],
+            ["y",1,15]
+        ],
+        "solution":"x+y"
+    },
+    {
+        "problem":"What is __x__-__y__?",
+        "variables":[
+            ["x",10,19],
+            ["y",1,9]
+        ],
+        "solution":"x-y"
+    },
+    {
+        "problem":"What is __x__-__y__?",
+        "variables":[
+            ["x",5,10],
+            ["y",1,5]
+        ],
+        "solution":"x-y"
+    }
+]

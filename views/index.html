@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Generate math and physics problems with random parameters!">
+        <meta name="title" content="Problem set generator">
+        <meta charset="UTF-8">
+        
+        <title>Problem Set Generator</title>
+
+        <link rel="stylesheet" href="../public/css/main.css">
+    </head>
+    <body>
+        <div style="padding-top: 10rem"></div>
+        <div class="container-1">
+            <div style="padding-top: 2rem"></div>
+            <h1><%= page_title ></h1>
+            <span>Select a problem set.</span>
+            <div style="padding-top: 1rem"></div>
+            <div class="list" style="height: 12rem; max-height: 12rem; min-height: 8rem">
+                <%= problem_set >
+            </div>
+            <div style="padding-top: 2rem"></div>
+            <button class="button" id="generate">Generate!</button>
+            <div style="padding-top: 1rem"></div>
+        </div>
+    </body>
+</html>

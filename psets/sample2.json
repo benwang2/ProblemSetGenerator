@@ -1,0 +1,28 @@
+[
+    "true",
+    "Basic multiplication",
+    {
+        "problem":"What is __x__*__y__?",
+        "variables":[
+            ["x",1,9],
+            ["y",1,9]
+        ],
+        "solution":"x*y"
+    },
+    {
+        "problem":"What is __x__*__y__?",
+        "variables":[
+            ["x",1,4],
+            ["y",5,9]
+        ],
+        "solution":"x*y"
+    },
+    {
+        "problem":"What is __x__*__y__?",
+        "variables":[
+            ["x",5,9],
+            ["y",5,9]
+        ],
+        "solution":"x*y"
+    }
+]
