@@ -7,18 +7,33 @@
         
         <title>Problem Set Generator</title>
 
-        <link rel="stylesheet" href="../public/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
     </head>
     <body>
         <div style="padding-top: 10rem"></div>
         <div class="container-1">
             <div style="padding-top: 2rem"></div>
-            <h1><%= page_title ></h1>
+            <h1><%= page_title %></h1>
             <span>Select a problem set.</span>
             <div style="padding-top: 1rem"></div>
             <div class="list" style="height: 12rem; max-height: 12rem; min-height: 8rem">
-                <%= problem_set >
+                <% for(let i = 0; i < problem_set.length; i++) {%>
+                    <label for="<%=i %>" class="checkbox">
+                        <input type="checkbox" id="<%=i %>">
+                        <%= problem_set[i] %>
+                    </label>
+                <% } %>
             </div>
+            <div style="padding-top: 1rem"></div>
+            <label for="num_problems" class="number-input">
+                <span>
+                    amount:
+                    <input type="number" id="num_problems" autocomplete="false" required
+                    placeholder="Number of questions"
+                    value="10" min="1" max="50"
+                    >
+                </span>
+            </label>
             <div style="padding-top: 2rem"></div>
             <button class="button" id="generate">Generate!</button>
             <div style="padding-top: 1rem"></div>

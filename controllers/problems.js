@@ -1,26 +1,3 @@
-/* 
-1. loop through psets
-2. json to list
-3. first arg of list is whether pset is visible
-4. json is formatted as such:
-[
-    "homework 5", -- problem set name
-    "true", -- if visible
-    [
-        "__variable1__ + __variable2__ = ?",
-        ["variable1",-3,3], -- first arg is var name, second arg is min value, third arg is max value
-        ["variable2",-10,15],
-        "variable1+variable2" -- formula for solution
-    ],
-    [
-        "__variable1__*__variable2__ = ?",
-        ["variable1",0.1, 0.5, 0.1], -- third arg is a "step" argument. so the possible params for this would be: [0.1, 0.2, 0.3, 0.4, 0.5]
-        ["variable2",1,20],          -- third arg will be 1 by default,
-        "variable1*variable2"
-    ]
-]
-*/
-
 const problems = {}
 
 var fs = require('fs')
@@ -105,13 +82,5 @@ function generate_problem_set(psets = [], num_problems = 3){
     return generated
 }
 
-generate_problem_set(
-    [
-        JSON.parse(fs.readFileSync(__dirname+"/../psets/hw5.json"))
-    ]
-)
-
-problems["list"] = list_problem_sets
-problems["generate"] = generate_problem_set
-
-export default problems
+exports.list = list_problem_sets
+exports.generate = generate_problem_set
