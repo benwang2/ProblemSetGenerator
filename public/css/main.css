@@ -18,8 +18,7 @@ h1 {line-height: 50%}
 .container-1 {
     background-color: #fff;
     border-radius: 6px;
-    min-width: 700px;
-    max-width: 90%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +33,11 @@ h1 {line-height: 50%}
     overflow-y: scroll;
 }
 
+button[disabled=disabled], button[disabled=disabled]:hover{
+    background-color: gray;
+    cursor: default
+}
+
 .button {
     border: none;
     padding: 1em;
@@ -42,12 +46,13 @@ h1 {line-height: 50%}
     color: aliceblue;
     font-weight: bolder;
 
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background-color: #00bb80;
+    transition: all 0.2s;
 }
 
 .button:hover{
     cursor: pointer;
+    background-color: #4cdbae;
 }
 
 input[type="number"] {

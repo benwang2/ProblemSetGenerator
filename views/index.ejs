@@ -8,6 +8,17 @@
         <title>Problem Set Generator</title>
 
         <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+        <script>
+            let raw = "<%=problem_set%>"
+            raw = raw.match(/[^,]+,[^,]+,[^,]+/g)
+
+            let psets = {}
+            for (let i = 0; i < raw.length; i++) psets[raw[i].split(',',1)] = raw[i].slice(raw[i].search(',')+1).split(',')
+        </script>
+
+        <script src="/js/main.js"></script>
+        <script src="/js/index.js"></script>
     </head>
     <body>
         <div style="padding-top: 10rem"></div>
@@ -18,9 +29,9 @@
             <div style="padding-top: 1rem"></div>
             <div class="list" style="height: 12rem; max-height: 12rem; min-height: 8rem">
                 <% for(let i = 0; i < problem_set.length; i++) {%>
-                    <label for="<%=i %>" class="checkbox">
-                        <input type="checkbox" id="<%=i %>">
-                        <%= problem_set[i] %>
+                    <label for="pset_<%=problem_set[i][0] %>" class="checkbox">
+                        <input type="checkbox" id="pset_<%=problem_set[i][0] %>" onclick="update_selection(this.id, this.checked)">
+                        <%= problem_set[i][1] %>
                     </label>
                 <% } %>
             </div>
@@ -30,12 +41,12 @@
                     amount:
                     <input type="number" id="num_problems" autocomplete="false" required
                     placeholder="Number of questions"
-                    value="10" min="1" max="50"
+                    value="10" min="1" max="10"
                     >
                 </span>
             </label>
             <div style="padding-top: 2rem"></div>
-            <button class="button" id="generate">Generate!</button>
+            <button class="button" id="generate" disabled="1">Generate!</button>
             <div style="padding-top: 1rem"></div>
         </div>
     </body>
