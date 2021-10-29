@@ -16,9 +16,11 @@ body {
 h1 {line-height: 50%}
 
 .container-1 {
+    padding: 0rem 2rem 0rem 2rem;
     background-color: #fff;
     border-radius: 6px;
-    max-width: 700px;
+    max-width: max-content;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

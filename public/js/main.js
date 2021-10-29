@@ -16,8 +16,11 @@ function update_selection(id, checked){
     let elmt = document.getElementById("num_problems")
     elmt.value = max_problems
     elmt.max = max_problems
+
+    let gen = document.getElementById('generate')
     
-    document.getElementById("generate").setAttribute("disabled", (max_problems == 0) ? "disabled" : "")
+    if (max_problems==0){gen.setAttribute('disabled',1)}
+    else if (gen.getAttribute('disabled') != null){gen.removeAttribute('disabled')}
 }
 
 on_load_calls.push(function(){
