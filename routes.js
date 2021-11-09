@@ -12,10 +12,6 @@ exports.generate = function(app){
 
             let generated = pset.generate(pset_ids, data.num_problems)
             res.send(JSON.stringify(generated))
-
-            console.log(generated)
-
-            // res.render(__dirname+'/views/problems.ejs')
         } catch (e) {
             console.error(e)
             res.sendStatus(400)

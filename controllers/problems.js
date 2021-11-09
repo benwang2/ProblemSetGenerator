@@ -101,7 +101,10 @@ function generate_problem_set(psets = [], num_problems = 10){
             pstring = format_problem(pstring, param, parameters[param])
         }
 
-        generated.push([pstring,evaluate(problem['solution'],parameters)])
+        generated.push({
+            "problem":pstring,
+            "solution":evaluate(problem['solution'],parameters)
+        })
     }
 
     return generated
