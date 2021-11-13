@@ -1,4 +1,6 @@
 var pset = require('./controllers/problems')
+var uid = require('./controllers/uid')
+var cache = require('./controllers/cache')
 
 exports.generate = function(app){
 
@@ -11,14 +13,23 @@ exports.generate = function(app){
             }
 
             let generated = pset.generate(pset_ids, data.num_problems)
-            res.send(JSON.stringify(generated))
+            let id = uid.generate()
+            cache.upload(id,generated)
+            generated.unshift(id)
+            res.send("/problems/"+id)
         } catch (e) {
             console.error(e)
             res.sendStatus(400)
         }
     })
 
-    app.get('/problems', function(req, res){
-        res.render(__dirname+'/views/problems.ejs')
+    app.get('/problems/:id', function(req, res){
+        let id = req.params.id
+        if (id == null){res.redirect("/")}
+        let problems = cache.get(id)
+        if (cache.get(id) == null){res.redirect("/")}
+        res.render(__dirname+'/views/problems.ejs',{
+            problems: JSON.stringify(problems)
+        })
     })
 }

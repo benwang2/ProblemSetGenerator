@@ -21,9 +21,10 @@ on_load_calls.push(()=>{
             },
             body: JSON.stringify(req)
         })
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
+        .then(res => res.text())
+        .then(url => {
+            console.log(url)
+            window.location.replace(window.location.href+url.slice(1))
         })
     }
 })

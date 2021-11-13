@@ -9,7 +9,7 @@ function init(){
         let file = fs.readFileSync(__dirname + '/../psets/' + files[i]);
         let data = JSON.parse(file);
         if (data[0]){
-            let my_uid = uid.generate()
+            let my_uid = uid.genseed(files[i].toString())
             problems[my_uid] = [files[i], data[1], data.length-2];
         }
     }
