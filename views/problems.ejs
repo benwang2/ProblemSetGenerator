@@ -5,17 +5,24 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/problems.css">
-        <script src="js/main.js"></script>
-        <script>
-            console.log("<%=problems%>")
-        </script>
+        <script src="/js/load_problems.js">let gen_element = gen_element</script>
     </head>
     <body>
         <div style="padding-top: 10rem"></div>
         <div class="container-1">
             <h1 style="line-height: 100%;">Gen. Physics 203 Review Problems</h1>
             <div class="problem-list">
-                <div class="problem">
+                <script>
+                    var problems = <%-JSON.stringify(problems)%>
+                    problems = JSON.parse(problems)
+
+                    for (let i = 0; i < problems.length; i++){
+                        if (problems[i]["problem"] == null) continue
+                        let div = gen_element(problems[i]["problem"],problems[i]["image"])
+                        document.querySelector(".problem-list").append(div)
+                    }
+                </script>
+                <!-- <div class="problem">
                     <div class="p-left">
                         <button class="circle" style="background-color:#8B90FF"><img src="/svg/regen.svg" style="position: relative;top:1px"></button>
                         <button class="circle" style="background-color:#68E7A2"><img src="/svg/check.svg" style="position: relative;top:2px"></button>
@@ -52,7 +59,7 @@
                         </div>
                     </div>
                     <span style="color:gray; position: absolute; bottom: 1rem;left:1rem">hw8</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
