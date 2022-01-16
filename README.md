@@ -64,9 +64,9 @@ The first value, `true`, dictates whether or not this problem set will be displa
 The second value, `Basic addition and subtraction`, is the title of the problem set.
 
 Any consequent objects hold data for various problems. Variable names for problems should be surrounded with double underscores, as displayed below. Variables can have 3 or 4 parameters,
-- variable name, `x`
-- minimum value, `1`
-- maximum value, `9`
+- variable name
+- minimum value
+- maximum value
 - interval, defaults to 1
 ```json
 {
@@ -76,4 +76,5 @@ Any consequent objects hold data for various problems. Variable names for proble
         ["y",1,9]
     ],
     "solution":"x+y"
-},```
+}
+```
